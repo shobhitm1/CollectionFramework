@@ -8,15 +8,21 @@ import java.util.Set;
 public class Hashmap {
 
 	public static void main(String[] args) {
+		//HashMap is the implementation of Map, but it doesn't maintain any order.
+		//LinkedHashMap is the implementation of Map. It inherits HashMap class. It maintains insertion order.
 		//HashMap is a bucket of nodes .Each node is a linked list node.
+		//TreeMap is the implementation of Map and SortedMap. It maintains ascending order.
 		//HashMap extends abstractMap class and implements Map interface
-		//It contains only unique values on the basis of key and value pair.
-		//HashMap can have null values.//It maintans no order.
+		//It contains only unique values on the basis of key and value pair.//Won't thrrow an errro if duplicate keys are entered.
+		//However it will pick the latest values of the duplicate key.
+		//HashMap can have null values.(can store only one nul value.)//It maintains no order.
 		//HashMap is non synchronised.It is not thread safe.Multiple thread can access it.
 				//DrawBack:-If any thread updates the value then other thread will get the updated value.(Fail-Fast Condition)
 				//ConcurrentModificationException
-				//Nonsynchronised meand:- all threads can attack object at the same time.
+				//Nonsynchronised means:- all threads can attack object at the same time.
+		
 		HashMap<Integer,String> hm = new HashMap<Integer,String>();
+		Set set =hm.entrySet();
 		hm.put(1,"Shobhit");hm.put(2,"Rohan");hm.put(3,"Akshay");
 		//To print all the values of Hashmap
 		//System.out.println(hm.get(1));
@@ -39,7 +45,6 @@ public class Hashmap {
 		//hm.remove(2);
 		System.out.println("*****");
 		//System.out.println(hm);
-		
 		employee e1	 = new employee("Shobhit",22,"TQA");
 		employee e2	 = new employee("Rohit",32,"Design");
 		employee e3	 = new employee("Mudit",22,"Market");

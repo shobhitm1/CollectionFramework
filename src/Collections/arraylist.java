@@ -25,27 +25,21 @@ public class arraylist {
 		System.out.println("******");	
 		System.out.println("Element at third index is:-"+" "+ar.get(3));
 		System.out.println("******");	
-		//There are 6 ways to traverse arraylist
+		//There are 6 ways to traverse arrayList
 		
-		// 1.Get all values Using For Loop
+		// 1.Get all values Using For Loop with index/order
 		System.out.println("Using for loop");
 		for (int i = 0; i < ar.size(); i++) {
 			System.out.println(ar.get(i));
 		}
 		System.out.println("******");	
 		
-		//2.using for-each loop and lambda
+		//2.Using java8 with for-each loop and lambda
 		System.out.println("Using for loop and lamdba");
-		ar.forEach
-		(
-				item->
-				{
-				System.out.println(item);
-				}
-		);
+		ar.forEach(item->System.out.println(item));
 		System.out.println("*****");
 		
-		//3.using iterator and for-each remaining method
+		//3.Using iterator and for-each remaining method
 		System.out.println("Using Iterator and for-each remaining method");
 		Iterator<String> it3=ar.iterator();
 		it3.forEachRemaining(move->{
@@ -57,6 +51,7 @@ public class arraylist {
 		System.out.println("Using Iterator");
 		Iterator<String> it2 =ar.iterator();
 		while(it2.hasNext()) {
+		
 			System.out.println(it2.next());
 		}
 		System.out.println("*****");
@@ -127,6 +122,23 @@ public class arraylist {
 			System.out.println(ar7.get(k));
 			
 		}
+		
+		System.out.println("********");
+		System.out.println("Using Remove method of Iterator");
+	
+		Iterator i = ar.iterator();
+		while(i.hasNext()) {
+		String abc= (String) i.next();	
+		if(abc.equals("Shanta")) {
+			i.remove();
+			System.out.println("Shanta is removed");
+			break;
+		}
+		}
+		 System.out.println("\nThe ArrayList elements are: ");
+	      for (String s: ar) {
+	         System.out.println(s);
+	      }
 		
 		
 	}
